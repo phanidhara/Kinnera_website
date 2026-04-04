@@ -8,21 +8,21 @@ const services = [
     description: 'Expert diagnosis and treatment for a wide range of skin, hair, and nail conditions using evidence-based protocols.',
     icon: Stethoscope,
     items: ['Acne & Rosacea', 'Psoriasis & Eczema', 'Hair Loss (Alopecia)', 'Vitiligo Management', 'Fungal Infections'],
-    color: 'bg-blue-50 text-blue-600',
+    color: 'bg-brand-gold-light text-brand-gold-dark',
   },
   {
     title: 'Aesthetic Medicine',
     description: 'Advanced non-surgical treatments to rejuvenate your skin and enhance your natural features.',
     icon: Sparkles,
     items: ['Botox & Dermal Fillers', 'Laser Hair Reduction', 'PRP Therapy', 'Chemical Peels', 'Skin Rejuvenation'],
-    color: 'bg-amber-50 text-amber-600',
+    color: 'bg-brand-gold/10 text-brand-gold',
   },
   {
     title: 'Dermatological Surgery',
     description: 'Specialized surgical procedures performed with precision to treat skin conditions and improve aesthetics.',
     icon: Scissors,
     items: ['Vitiligo Surgery', 'Hair Transplant', 'Mole & Cyst Removal', 'Scar Revision', 'Skin Biopsy'],
-    color: 'bg-emerald-50 text-emerald-600',
+    color: 'bg-brand-gold-dark/10 text-brand-gold-dark',
   },
 ];
 
