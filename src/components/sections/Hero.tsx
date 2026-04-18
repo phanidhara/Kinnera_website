@@ -1,15 +1,21 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, Star, ShieldCheck, Award } from 'lucide-react';
+import { Award, Phone, MessageCircle } from 'lucide-react';
+
+const WHATSAPP = 'https://wa.me/919932554359?text=Hi%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Kinnera';
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-brand-cream">
-      {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-gold/5 -skew-x-12 transform translate-x-1/4" />
-      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-brand-gold/10 rounded-full blur-3xl opacity-50" />
+      {/* Background decoration */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 right-0 w-[60%] h-full bg-gradient-to-l from-brand-gold/8 to-transparent" />
+        <div className="absolute -bottom-32 -left-32 w-[600px] h-[600px] bg-brand-gold/6 rounded-full blur-3xl" />
+        <div className="absolute top-20 right-10 w-[400px] h-[400px] bg-brand-gold-dark/4 rounded-full blur-3xl" />
+      </div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10 w-full">
+        {/* Left — Text */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -17,63 +23,108 @@ const Hero = () => {
         >
           <div className="inline-flex items-center gap-2 bg-brand-gold-light text-brand-gold-dark px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase mb-6 border border-brand-gold/20">
             <Award className="w-4 h-4 text-brand-gold" />
-            Gold Medalist Dermatologist & Surgeon
+            IADVL Gold Medalist · MD Dermatology
           </div>
-          
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-brand-gold-dark leading-[1.1] mb-6">
-            Expert Dermatological Care by <span className="text-brand-gold italic">Dr. B Kinnera</span>
+
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-brand-gold-dark leading-[1.1] mb-4">
+            Dr. Kinnera <br />
+            <span className="text-brand-gold italic">Boina</span>
           </h1>
-          
+
+          <p className="text-lg md:text-xl text-brand-text/70 font-medium mb-2">
+            MBBS · MD (Dermatology) · FRGUHS
+          </p>
+          <p className="text-base text-brand-text/50 mb-8">
+            Chief Dermatologist · Apollo Hospitals, Ramnagar, Visakhapatnam
+          </p>
+
           <p className="text-lg text-brand-text/70 mb-10 leading-relaxed max-w-xl">
-            Specialized dermatological and cosmetic solutions in Visakhapatnam. Combining clinical excellence with surgical precision for your skin's health.
+            With over 8 years of specialized experience and more than 10 gold medals to her credit,
+            Dr. Kinnera delivers transformative dermatological care — from medical skin conditions
+            to advanced surgical and aesthetic procedures.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="btn-primary flex items-center justify-center gap-2 text-lg px-8 py-4">
-              Book Appointment
-              <ArrowRight className="w-5 h-5" />
-            </button>
-            <button className="btn-secondary flex items-center justify-center gap-2 text-lg px-8 py-4">
-              View Services
-            </button>
+            <a
+              href={`tel:+919932554359`}
+              className="btn-primary flex items-center justify-center gap-2 text-base px-8 py-4"
+            >
+              <Phone className="w-5 h-5" />
+              Call Now
+            </a>
+            <a
+              href={WHATSAPP}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 text-base px-8 py-4 rounded-full font-medium border-2 border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white transition-all duration-300"
+            >
+              <MessageCircle className="w-5 h-5" />
+              WhatsApp Us
+            </a>
+          </div>
+
+          {/* Trust indicators */}
+          <div className="mt-12 flex flex-wrap gap-6">
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-brand-gold" />
+              <span className="text-sm text-brand-text/60 font-medium">8+ Years Experience</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-brand-gold" />
+              <span className="text-sm text-brand-text/60 font-medium">10+ Gold Medals</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-brand-gold" />
+              <span className="text-sm text-brand-text/60 font-medium">Fellowship in Dermatosurgery</span>
+            </div>
           </div>
         </motion.div>
 
+        {/* Right — Photo */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: 'easeOut' }}
-          className="relative"
+          className="relative flex justify-center lg:justify-end"
         >
-          <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-8 border-white aspect-[4/5]">
+          <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-8 border-white aspect-[4/5] w-full max-w-md">
             <img
               src="/dr-kinnera.png"
-              alt="Dr. B Kinnera"
+              alt="Dr. Kinnera Boina — Consultant Dermatologist, Visakhapatnam"
               className="w-full h-full object-cover"
-              referrerPolicy="no-referrer"
             />
           </div>
-          
-          {/* Floating Card */}
+
+          {/* Floating credential badge */}
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute -bottom-10 -left-10 z-20 bg-white p-6 rounded-xl shadow-xl border border-brand-gold/10 max-w-[240px]"
+            className="absolute -bottom-6 -left-6 z-20 bg-white p-5 rounded-2xl shadow-xl border border-brand-gold/10 max-w-[220px]"
           >
-            <div className="flex items-center gap-3 mb-3">
+            <div className="flex items-center gap-3 mb-2">
               <div className="bg-brand-gold-light p-2 rounded-full">
-                <ShieldCheck className="w-5 h-5 text-brand-gold-dark" />
+                <Award className="w-5 h-5 text-brand-gold-dark" />
               </div>
-              <span className="text-sm font-bold text-brand-gold-dark">Certified Expert</span>
+              <span className="text-sm font-bold text-brand-gold-dark">IADVL Gold Medal</span>
             </div>
-            <p className="text-xs text-brand-text/60 leading-relaxed">
-              Specialized in advanced dermatological surgery and aesthetic medicine.
+            <p className="text-xs text-brand-text/55 leading-relaxed">
+              Highest marks at university level — MD Dermatology
             </p>
           </motion.div>
 
-          {/* Decorative Rings */}
-          <div className="absolute -top-10 -right-10 w-40 h-40 border-2 border-brand-gold/20 rounded-full" />
-          <div className="absolute -top-16 -right-16 w-40 h-40 border-2 border-brand-gold-dark/10 rounded-full" />
+          {/* Floating fellowship badge */}
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+            className="absolute top-10 -right-4 z-20 bg-brand-gold-dark text-white p-4 rounded-2xl shadow-xl max-w-[180px]"
+          >
+            <p className="text-xs font-bold tracking-wide uppercase text-brand-gold-light/80 mb-1">Fellowship</p>
+            <p className="text-sm font-bold">Dermatosurgery &amp; Hair Transplantation</p>
+          </motion.div>
+
+          {/* Decorative rings */}
+          <div className="absolute -top-8 -right-8 w-40 h-40 border-2 border-brand-gold/20 rounded-full pointer-events-none" />
+          <div className="absolute -top-14 -right-14 w-40 h-40 border border-brand-gold-dark/10 rounded-full pointer-events-none" />
         </motion.div>
       </div>
     </section>
