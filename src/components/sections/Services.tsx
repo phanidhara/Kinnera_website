@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Stethoscope, Sparkles, Scissors, Baby, Heart, ChevronDown, MessageCircle } from 'lucide-react';
 
-const WHATSAPP = 'https://wa.me/919932554359?text=Hi%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Kinnera';
+const WHATSAPP = 'https://wa.me/917981337366?text=Hi%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Kinnera';
 
 const categories = [
   {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Award, Heart, ArrowUp, MessageCircle, Phone, MapPin } from 'lucide-react';
 
-const WHATSAPP = 'https://wa.me/919932554359?text=Hi%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Kinnera';
+const WHATSAPP = 'https://wa.me/917981337366?text=Hi%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Kinnera';
 
 const Footer = () => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -35,7 +35,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 shrink-0" />
-                +91 99325 54359
+                +91 79813 37366
               </div>
             </div>
           </div>

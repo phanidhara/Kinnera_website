@@ -1,8 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Award, Phone, MessageCircle } from 'lucide-react';
-
-const WHATSAPP = 'https://wa.me/919932554359?text=Hi%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Kinnera';
+import { Award } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -44,24 +42,6 @@ const Hero = () => {
             to advanced surgical and aesthetic procedures.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href={`tel:+919932554359`}
-              className="btn-primary flex items-center justify-center gap-2 text-base px-8 py-4"
-            >
-              <Phone className="w-5 h-5" />
-              Call Now
-            </a>
-            <a
-              href={WHATSAPP}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 text-base px-8 py-4 rounded-full font-medium border-2 border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white transition-all duration-300"
-            >
-              <MessageCircle className="w-5 h-5" />
-              WhatsApp Us
-            </a>
-          </div>
 
           {/* Trust indicators */}
           <div className="mt-12 flex flex-wrap gap-6">
@@ -91,7 +71,7 @@ const Hero = () => {
             <img
               src="/dr-kinnera.png"
               alt="Dr. Kinnera Boina — Consultant Dermatologist, Visakhapatnam"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-top"
             />
           </div>
 
