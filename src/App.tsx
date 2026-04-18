@@ -12,7 +12,7 @@ import WhyChoose from './components/sections/WhyChoose';
 import FAQ from './components/sections/FAQ';
 import Contact from './components/sections/Contact';
 
-const WHATSAPP = 'https://wa.me/919932554359?text=Hi%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Kinnera';
+const WHATSAPP = 'https://wa.me/917981337366?text=Hi%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Kinnera';
 
 export default function App() {
   return (

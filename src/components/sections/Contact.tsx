@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { MapPin, Phone, Clock, MessageCircle, Instagram, Facebook } from 'lucide-react';
 
-const WHATSAPP = 'https://wa.me/919932554359?text=Hi%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Kinnera';
+const WHATSAPP = 'https://wa.me/917981337366?text=Hi%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Kinnera';
 
 const steps = [
   { num: '1', text: 'Send a WhatsApp message with your name and concern' },
@@ -86,8 +86,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-brand-gold-dark mb-1">Phone / WhatsApp</h4>
-                  <a href="tel:+919932554359" className="text-brand-text/60 text-sm hover:text-brand-gold-dark transition-colors">
-                    +91 99325 54359
+                  <a href="tel:+917981337366" className="text-brand-text/60 text-sm hover:text-brand-gold-dark transition-colors">
+                    +91 79813 37366
                   </a>
                 </div>
               </div>
@@ -144,7 +144,7 @@ const Contact = () => {
                   <MessageCircle className="w-5 h-5" />
                   Chat with Us
                 </a>
-                <p className="text-brand-gold-light/40 text-xs mt-4">+91 99325 54359</p>
+                <p className="text-brand-gold-light/40 text-xs mt-4">+91 79813 37366</p>
               </div>
             </div>
 
