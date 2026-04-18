@@ -1,43 +1,203 @@
-import React from 'react';
-import { motion } from 'motion/react';
-import { Stethoscope, Sparkles, Scissors, ArrowRight, CheckCircle2 } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Stethoscope, Sparkles, Scissors, Baby, Heart, ChevronDown, MessageCircle } from 'lucide-react';
 
-const services = [
+const WHATSAPP = 'https://wa.me/919932554359?text=Hi%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Kinnera';
+
+const categories = [
   {
-    title: 'Clinical Dermatology',
-    description: 'Expert diagnosis and treatment for a wide range of skin, hair, and nail conditions using evidence-based protocols.',
+    id: 'clinical',
     icon: Stethoscope,
-    items: ['Acne & Rosacea', 'Psoriasis & Eczema', 'Hair Loss (Alopecia)', 'Vitiligo Management', 'Fungal Infections'],
-    color: 'bg-brand-gold-light text-brand-gold-dark',
+    title: 'Clinical Dermatology',
+    description: 'Advanced diagnosis and management of complex skin disorders using evidence-based protocols and the latest therapies.',
+    procedures: [
+      'Psoriasis, Eczema & Autoimmune Skin Conditions',
+      'Acne, Rosacea & Hyperpigmentation',
+      'Dermatitis & Allergic Skin Reactions',
+      'Fungal, Bacterial & Viral Skin Infections',
+      'Biologicals & Immunotherapy',
+      'Vitiligo Management',
+    ],
+    color: 'bg-amber-50 border-amber-200',
+    iconColor: 'bg-amber-100 text-amber-800',
+    tag: null,
   },
   {
-    title: 'Aesthetic Medicine',
-    description: 'Advanced non-surgical treatments to rejuvenate your skin and enhance your natural features.',
-    icon: Sparkles,
-    items: ['Botox & Dermal Fillers', 'Laser Hair Reduction', 'PRP Therapy', 'Chemical Peels', 'Skin Rejuvenation'],
-    color: 'bg-brand-gold/10 text-brand-gold',
+    id: 'trichology',
+    icon: Heart,
+    title: 'Trichology & Hair Transplantation',
+    description: 'Comprehensive hair and scalp solutions — from diagnosis and medical management to advanced FUE hair transplantation.',
+    procedures: [
+      'Genetic Baldness & Alopecia Areata',
+      'Hair Loss Treatment',
+      'Dandruff & Scalp Conditions',
+      'Scalp Biopsy & Trichoscopy',
+      'PRP for Hair Growth',
+      'Eyebrow Microblading & Scalp Micropigmentation',
+      'Electroepilation for White Hair',
+      'Hair Transplantation — FUE (Scalp, Beard, Eyebrow, Scar)',
+    ],
+    color: 'bg-rose-50 border-rose-200',
+    iconColor: 'bg-rose-100 text-rose-800',
+    tag: 'Most Popular',
   },
   {
-    title: 'Dermatological Surgery',
-    description: 'Specialized surgical procedures performed with precision to treat skin conditions and improve aesthetics.',
+    id: 'surgery',
     icon: Scissors,
-    items: ['Vitiligo Surgery', 'Hair Transplant', 'Mole & Cyst Removal', 'Scar Revision', 'Skin Biopsy'],
-    color: 'bg-brand-gold-dark/10 text-brand-gold-dark',
+    title: 'Dermatosurgery',
+    description: 'Specialized surgical procedures performed with precision for skin conditions, pigment restoration, and aesthetic improvement.',
+    procedures: [
+      'Skin Biopsy (Oral, Genital & Scalp)',
+      'Radio Frequency / Electrocautery (DPNs, Moles, Tags, Warts)',
+      'Excisional Surgeries (Mole, Cyst, Corn, Lipoma)',
+      'Vitiligo Surgeries',
+      'Acne Scar Surgeries',
+      'PRP / PRFM for Scars & Ulcers',
+      'Scar Revision Surgeries',
+      'Ear Piercing & Ear Lobe Repair',
+      'Keloid Surgeries',
+      'Nail Surgeries',
+      'Sclerotherapy',
+    ],
+    color: 'bg-stone-50 border-stone-200',
+    iconColor: 'bg-stone-100 text-stone-800',
+    tag: null,
+  },
+  {
+    id: 'aesthetic',
+    icon: Sparkles,
+    title: 'Aesthetic Dermatology',
+    description: 'Non-surgical and minimally invasive treatments to rejuvenate your skin and enhance your natural features.',
+    procedures: [
+      'Uneven Skin Tone Treatment',
+      'Facial Rejuvenation',
+      'Botox & Fillers',
+      'PRP for Skin',
+      'Chemical Peels & Party Peels',
+      'Laser Hair Removal (Face & Body)',
+      'Laser for Scars',
+      'Vampire Lift Facial',
+      'Dermaplaning',
+    ],
+    color: 'bg-yellow-50 border-yellow-200',
+    iconColor: 'bg-yellow-100 text-yellow-800',
+    tag: 'Popular',
+  },
+  {
+    id: 'pediatric',
+    icon: Baby,
+    title: 'Pediatric Dermatology',
+    description: 'Gentle, age-appropriate care for children\'s skin conditions — from common rashes to complex congenital disorders.',
+    procedures: [
+      'Atopic Dermatitis & Infantile Acne',
+      'Birthmarks & Congenital Skin Disorders',
+      'Pediatric Infectious Skin Diseases',
+      'Age-Appropriate Treatment Protocols',
+    ],
+    color: 'bg-blue-50 border-blue-200',
+    iconColor: 'bg-blue-100 text-blue-800',
+    tag: null,
+  },
+  {
+    id: 'geriatric',
+    icon: Stethoscope,
+    title: 'Geriatric Dermatology',
+    description: 'Specialized care for age-related and systemic skin conditions in older patients.',
+    procedures: [
+      'Chronic Pruritus & Age-Related Skin Conditions',
+      'Immunobullous Disorders (Pemphigus, Bullous Pemphigoid)',
+      'Skin Conditions from Diabetes, Hypertension & Other Systemic Diseases',
+    ],
+    color: 'bg-teal-50 border-teal-200',
+    iconColor: 'bg-teal-100 text-teal-800',
+    tag: null,
   },
 ];
+
+function ServiceCard({ cat, index }: { cat: typeof categories[0]; index: number }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.08 }}
+      className={`bg-white rounded-3xl border overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 ${cat.color}`}
+    >
+      <div className="p-7">
+        <div className="flex items-start justify-between mb-5">
+          <div className="flex items-center gap-3">
+            <div className={`p-3 rounded-2xl ${cat.iconColor}`}>
+              <cat.icon className="w-6 h-6" />
+            </div>
+            {cat.tag && (
+              <span className="bg-brand-gold text-white text-xs font-bold px-3 py-1 rounded-full">
+                {cat.tag}
+              </span>
+            )}
+          </div>
+        </div>
+
+        <h3 className="text-xl font-serif font-bold text-brand-gold-dark mb-3">{cat.title}</h3>
+        <p className="text-brand-text/60 text-sm leading-relaxed mb-5">{cat.description}</p>
+
+        {/* Top 3 always visible */}
+        <ul className="space-y-2 mb-4">
+          {cat.procedures.slice(0, 3).map((p) => (
+            <li key={p} className="flex items-start gap-2 text-sm text-brand-text/70">
+              <span className="text-brand-gold mt-1 shrink-0">·</span>
+              {p}
+            </li>
+          ))}
+        </ul>
+
+        {/* Expandable rest */}
+        <AnimatePresence>
+          {open && (
+            <motion.ul
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="space-y-2 mb-4 overflow-hidden"
+            >
+              {cat.procedures.slice(3).map((p) => (
+                <li key={p} className="flex items-start gap-2 text-sm text-brand-text/70">
+                  <span className="text-brand-gold mt-1 shrink-0">·</span>
+                  {p}
+                </li>
+              ))}
+            </motion.ul>
+          )}
+        </AnimatePresence>
+
+        {cat.procedures.length > 3 && (
+          <button
+            onClick={() => setOpen(!open)}
+            className="flex items-center gap-1 text-brand-gold-dark text-sm font-bold hover:text-brand-gold transition-colors"
+          >
+            {open ? 'Show less' : `+${cat.procedures.length - 3} more procedures`}
+            <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
+          </button>
+        )}
+      </div>
+    </motion.div>
+  );
+}
 
 const Services = () => {
   return (
     <section id="services" className="section-padding bg-brand-cream">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-20">
+        <div className="text-center mb-16">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-brand-gold font-bold tracking-widest uppercase text-sm"
           >
-            Our Expertise
+            Services & Procedures
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -46,7 +206,8 @@ const Services = () => {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl font-serif font-bold text-brand-gold-dark mt-4 mb-6"
           >
-            Comprehensive Skin Solutions
+            Comprehensive Dermatological <br className="hidden md:block" />
+            <span className="italic text-brand-gold">Care Under One Roof</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -55,69 +216,42 @@ const Services = () => {
             transition={{ delay: 0.2 }}
             className="text-brand-text/70 max-w-2xl mx-auto text-lg"
           >
-            We offer a wide range of dermatological services tailored to your unique needs, from medical diagnosis to advanced surgical procedures.
+            Dr. Kinnera offers 50+ procedures spanning medical, surgical, aesthetic, pediatric, and
+            geriatric dermatology — tailored to each patient's unique needs.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="group bg-white rounded-3xl p-8 border border-brand-gold/10 hover:bg-brand-gold-light hover:shadow-2xl hover:shadow-brand-gold/5 transition-all duration-500"
-            >
-              <div className={`w-16 h-16 rounded-2xl ${service.color} flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500 shadow-sm`}>
-                <service.icon className="w-8 h-8" />
-              </div>
-              
-              <h3 className="text-2xl font-serif font-bold text-brand-gold-dark mb-4">
-                {service.title}
-              </h3>
-              
-              <p className="text-brand-text/60 mb-8 leading-relaxed">
-                {service.description}
-              </p>
-
-              <ul className="space-y-4 mb-10">
-                {service.items.map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-brand-text/80 font-medium">
-                    <CheckCircle2 className="w-5 h-5 text-brand-gold" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              <button className="flex items-center gap-2 text-brand-gold-dark font-bold group-hover:gap-4 transition-all duration-300">
-                Learn More
-                <ArrowRight className="w-5 h-5" />
-              </button>
-            </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {categories.map((cat, i) => (
+            <ServiceCard key={cat.id} cat={cat} index={i} />
           ))}
         </div>
 
+        {/* CTA Banner */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.96 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="mt-20 bg-brand-gold-dark rounded-3xl p-10 md:p-16 text-center relative overflow-hidden"
+          className="mt-16 bg-brand-gold-dark rounded-3xl p-10 md:p-14 text-center relative overflow-hidden"
         >
-          {/* Decorative Background */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-brand-gold/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-gold-light/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
-
+          <div className="absolute top-0 right-0 w-64 h-64 bg-brand-gold/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
           <div className="relative z-10">
-            <h3 className="text-3xl md:text-4xl font-serif font-bold text-white mb-6">
-              Need a Personalized Consultation?
+            <h3 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">
+              Not sure which treatment is right for you?
             </h3>
-            <p className="text-brand-gold-light/80 max-w-2xl mx-auto mb-10 text-lg">
-              Every skin is unique. Book a session to get a customized treatment plan designed specifically for your skin type and concerns.
+            <p className="text-brand-gold-light/80 max-w-2xl mx-auto mb-8 text-lg">
+              Book a consultation and Dr. Kinnera will design a personalized plan based on your skin
+              type, condition, and goals.
             </p>
-            <button className="bg-brand-gold text-brand-gold-dark px-10 py-4 rounded-full font-bold text-lg hover:bg-white hover:scale-105 transition-all duration-300 shadow-xl">
-              Schedule Your Visit
-            </button>
+            <a
+              href={WHATSAPP}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#25D366] text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#25D366] transition-all duration-300 shadow-xl"
+            >
+              <MessageCircle className="w-5 h-5" />
+              Book via WhatsApp
+            </a>
           </div>
         </motion.div>
       </div>
