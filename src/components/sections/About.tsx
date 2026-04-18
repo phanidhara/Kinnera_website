@@ -43,7 +43,7 @@ const About = () => {
             <img
               src="/dr-kinnera.png"
               alt="Dr. Kinnera Boina — Consultant Dermatologist at Apollo Hospitals Visakhapatnam"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-top"
             />
           </div>
           {/* Pull quote overlay */}
