@@ -22,11 +22,8 @@ const Hero = () => {
             Dr. Kinnera <span className="text-brand-gold italic">B.</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-brand-text/70 font-medium mb-2">
-            MBBS · MD (Dermatology) · FRGUHS (Dermatosurgery &amp; Hair Transplantation)
-          </p>
-          <p className="text-base text-brand-text/50 mb-8">
-            Chief Dermatologist · Apollo Hospitals, Ramnagar, Visakhapatnam
+          <p className="text-lg md:text-xl text-brand-text/70 font-medium mb-8">
+            MBBS, MD (Dermatology), FRGUHS (Dermatosurgery &amp; Hair Transplantation)
           </p>
 
           <p className="text-lg text-brand-text/70 mb-10 leading-relaxed max-w-xl">
