@@ -7,7 +7,7 @@ const WHATSAPP = 'https://wa.me/917981337366?text=Hi%2C%20I%20would%20like%20to%
 const steps = [
   { num: '1', text: 'Send a WhatsApp message with your name and concern' },
   { num: '2', text: 'The clinic team will confirm your appointment slot' },
-  { num: '3', text: 'Visit Apollo Hospitals, Ramnagar at your scheduled time' },
+  { num: '3', text: 'Visit hospital at your scheduled time' },
 ];
 
 const Contact = () => {
