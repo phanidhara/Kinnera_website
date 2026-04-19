@@ -11,7 +11,7 @@ const highlights = [
   {
     icon: Microscope,
     title: 'Surgical Mastery',
-    desc: 'Fellowship (FRGUHS) in Dermatosurgery and Hair Transplantation — the first dermatologist in Andhra Pradesh to hold this specialized credential.',
+    desc: 'Fellowship (FRGUHS) in Dermatosurgery and Hair Transplantation — one of the very few dermatologists in Andhra Pradesh to hold this specialized credential.',
   },
   {
     icon: Users,
@@ -71,9 +71,8 @@ const About = () => {
 
           <p className="text-brand-text/70 mb-5 leading-relaxed">
             Dr. Kinnera Boina stands at the forefront of dermatological care as a board-certified Consultant
-            Dermatologist with over 8 years of specialized experience. As the Chief Dermatologist at Apollo
-            Hospitals, Ramnagar, she has built a practice founded on medical excellence, personalized
-            attention, and transformative results.
+            Dermatologist with over 8 years of specialized experience, building a practice founded on medical
+            excellence, personalized attention, and transformative results.
           </p>
 
           <p className="text-brand-text/70 mb-8 leading-relaxed">
