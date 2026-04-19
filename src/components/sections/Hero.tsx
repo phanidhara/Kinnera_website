@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Award } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -19,11 +18,6 @@ const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <div className="inline-flex items-center gap-2 bg-brand-gold-light text-brand-gold-dark px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase mb-6 border border-brand-gold/20">
-            <Award className="w-4 h-4 text-brand-gold" />
-            IADVL Gold Medalist · MD Dermatology
-          </div>
-
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-brand-gold-dark leading-[1.1] mb-4">
             Dr. Kinnera <span className="text-brand-gold italic">B.</span>
           </h1>
