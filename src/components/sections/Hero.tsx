@@ -38,25 +38,8 @@ const Hero = () => {
           <p className="text-lg text-brand-text/70 mb-10 leading-relaxed max-w-xl">
             With over 8 years of specialized experience and more than 10 gold medals to her credit,
             Dr. Kinnera delivers transformative dermatological care — from medical skin conditions
-            to advanced surgical and aesthetic procedures.
+            to advanced dermatosurgical and aesthetic procedures.
           </p>
-
-
-          {/* Trust indicators */}
-          <div className="mt-12 flex flex-wrap gap-6">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-brand-gold" />
-              <span className="text-sm text-brand-text/60 font-medium">8+ Years Experience</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-brand-gold" />
-              <span className="text-sm text-brand-text/60 font-medium">10+ Gold Medals</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-brand-gold" />
-              <span className="text-sm text-brand-text/60 font-medium">Fellowship in Dermatosurgery</span>
-            </div>
-          </div>
         </motion.div>
 
         {/* Right — Photo */}
@@ -73,33 +56,6 @@ const Hero = () => {
               className="w-full h-full object-cover object-top"
             />
           </div>
-
-          {/* Floating credential badge */}
-          <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute -bottom-6 -left-6 z-20 bg-white p-5 rounded-2xl shadow-xl border border-brand-gold/10 max-w-[220px]"
-          >
-            <div className="flex items-center gap-3 mb-2">
-              <div className="bg-brand-gold-light p-2 rounded-full">
-                <Award className="w-5 h-5 text-brand-gold-dark" />
-              </div>
-              <span className="text-sm font-bold text-brand-gold-dark">IADVL Gold Medal</span>
-            </div>
-            <p className="text-xs text-brand-text/55 leading-relaxed">
-              Highest marks at university level — MD Dermatology
-            </p>
-          </motion.div>
-
-          {/* Floating fellowship badge */}
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-            className="absolute top-10 -right-4 z-20 bg-brand-gold-dark text-white p-4 rounded-2xl shadow-xl max-w-[180px]"
-          >
-            <p className="text-xs font-bold tracking-wide uppercase text-brand-gold-light/80 mb-1">Fellowship</p>
-            <p className="text-sm font-bold">Dermatosurgery &amp; Hair Transplantation</p>
-          </motion.div>
 
           {/* Decorative rings */}
           <div className="absolute -top-8 -right-8 w-40 h-40 border-2 border-brand-gold/20 rounded-full pointer-events-none" />
