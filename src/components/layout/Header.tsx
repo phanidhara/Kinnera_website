@@ -42,7 +42,7 @@ const Header = () => {
               Dr. <span className="text-brand-gold">Kinnera Boina</span>
             </h1>
             <p className="text-[10px] uppercase tracking-widest font-semibold text-brand-gold-dark/50 mt-0.5">
-              MD Dermatology · FRGUHS
+              MD Dermatology · FRGUHS (Dermatosurgery &amp; Hair Transplantation)
             </p>
           </div>
         </a>
