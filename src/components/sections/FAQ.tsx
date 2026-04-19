@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     q: 'How do I book an appointment?',
-    a: 'The easiest way is to WhatsApp Dr. Kinnera\'s clinic at +91 79813 37366. You can also call the same number directly. The clinic is located at Apollo Hospitals, Ramnagar, Visakhapatnam.',
+    a: 'The easiest way is to WhatsApp Dr. Kinnera\'s clinic at +91 79813 37366. You can also call the same number directly.',
   },
   {
     q: 'What is the difference between FUE and FUT hair transplantation?',

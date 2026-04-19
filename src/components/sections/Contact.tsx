@@ -92,15 +92,6 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex gap-5 items-start">
-                <div className="bg-brand-gold-light p-3 rounded-xl shrink-0">
-                  <Clock className="w-5 h-5 text-brand-gold-dark" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-brand-gold-dark mb-1">Clinic Hours</h4>
-                  <p className="text-brand-text/60 text-sm">Monday – Saturday: 10:00 AM – 7:00 PM</p>
-                </div>
-              </div>
             </div>
 
             {/* Social */}

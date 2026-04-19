@@ -73,7 +73,7 @@ const categories = [
       'Facial Rejuvenation',
       'Botox & Fillers',
       'PRP for Skin',
-      'Chemical Peels & Party Peels',
+      'Chemical Peels',
       'Laser Hair Removal (Face & Body)',
       'Laser for Scars',
       'Vampire Lift Facial',
