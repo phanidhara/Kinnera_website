@@ -7,7 +7,6 @@ const WHATSAPP = 'https://wa.me/917981337366?text=Hi%2C%20I%20would%20like%20to%
 
 const navLinks = [
   { name: 'About', href: '#about' },
-  { name: 'Credentials', href: '#credentials' },
   { name: 'Services', href: '#services' },
   { name: 'Testimonials', href: '#testimonials' },
   { name: 'FAQ', href: '#faq' },

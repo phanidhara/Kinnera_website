@@ -4,7 +4,6 @@ import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
-import Credentials from './components/sections/Credentials';
 import Services from './components/sections/Services';
 import Testimonials from './components/sections/Testimonials';
 import WhyChoose from './components/sections/WhyChoose';
@@ -20,7 +19,6 @@ export default function App() {
       <main>
         <Hero />
         <About />
-        <Credentials />
         <Services />
         <Testimonials />
         <WhyChoose />
