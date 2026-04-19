@@ -7,7 +7,6 @@ const WHATSAPP = 'https://wa.me/917981337366?text=Hi%2C%20I%20would%20like%20to%
 
 const navLinks = [
   { name: 'About', href: '#about' },
-  { name: 'Credentials', href: '#credentials' },
   { name: 'Services', href: '#services' },
   { name: 'Testimonials', href: '#testimonials' },
   { name: 'FAQ', href: '#faq' },
@@ -42,7 +41,7 @@ const Header = () => {
               Dr. <span className="text-brand-gold">Kinnera Boina</span>
             </h1>
             <p className="text-[10px] uppercase tracking-widest font-semibold text-brand-gold-dark/50 mt-0.5">
-              MD Dermatology · FRGUHS
+              MBBS, MD, FRGUHS
             </p>
           </div>
         </a>

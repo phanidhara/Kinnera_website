@@ -3,12 +3,9 @@ import { MessageCircle } from 'lucide-react';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Hero from './components/sections/Hero';
-import TrustBar from './components/sections/TrustBar';
 import About from './components/sections/About';
-import Credentials from './components/sections/Credentials';
 import Services from './components/sections/Services';
 import Testimonials from './components/sections/Testimonials';
-import WhyChoose from './components/sections/WhyChoose';
 import FAQ from './components/sections/FAQ';
 import Contact from './components/sections/Contact';
 
@@ -20,12 +17,9 @@ export default function App() {
       <Header />
       <main>
         <Hero />
-        <TrustBar />
         <About />
-        <Credentials />
         <Services />
         <Testimonials />
-        <WhyChoose />
         <FAQ />
         <Contact />
       </main>

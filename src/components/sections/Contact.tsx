@@ -7,7 +7,7 @@ const WHATSAPP = 'https://wa.me/917981337366?text=Hi%2C%20I%20would%20like%20to%
 const steps = [
   { num: '1', text: 'Send a WhatsApp message with your name and concern' },
   { num: '2', text: 'The clinic team will confirm your appointment slot' },
-  { num: '3', text: 'Visit Apollo Hospitals, Ramnagar at your scheduled time' },
+  { num: '3', text: 'Visit hospital at your scheduled time' },
 ];
 
 const Contact = () => {
@@ -92,15 +92,6 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex gap-5 items-start">
-                <div className="bg-brand-gold-light p-3 rounded-xl shrink-0">
-                  <Clock className="w-5 h-5 text-brand-gold-dark" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-brand-gold-dark mb-1">Clinic Hours</h4>
-                  <p className="text-brand-text/60 text-sm">Monday – Saturday: 10:00 AM – 7:00 PM</p>
-                </div>
-              </div>
             </div>
 
             {/* Social */}

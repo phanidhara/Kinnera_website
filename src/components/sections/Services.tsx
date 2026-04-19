@@ -73,7 +73,7 @@ const categories = [
       'Facial Rejuvenation',
       'Botox & Fillers',
       'PRP for Skin',
-      'Chemical Peels & Party Peels',
+      'Chemical Peels',
       'Laser Hair Removal (Face & Body)',
       'Laser for Scars',
       'Vampire Lift Facial',
@@ -216,8 +216,7 @@ const Services = () => {
             transition={{ delay: 0.2 }}
             className="text-brand-text/70 max-w-2xl mx-auto text-lg"
           >
-            Dr. Kinnera offers 50+ procedures spanning medical, surgical, aesthetic, pediatric, and
-            geriatric dermatology — tailored to each patient's unique needs.
+            Dr. Kinnera offers medical, dermatosurgical, aesthetic, pediatric, and geriatric dermatology — tailored to each patient's unique needs.
           </motion.p>
         </div>
 
