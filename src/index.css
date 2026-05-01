@@ -5,11 +5,11 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Playfair Display", ui-serif, Georgia, serif;
   
-  --color-brand-gold: #C5A059;
-  --color-brand-gold-dark: #8C6239;
-  --color-brand-gold-light: #F9F3E5;
-  --color-brand-cream: #FFFDF9;
-  --color-brand-text: #2C1E0F;
+  --color-brand-gold: #2563EB;
+  --color-brand-gold-dark: #1E3A8A;
+  --color-brand-gold-light: #DBEAFE;
+  --color-brand-cream: #F0F7FF;
+  --color-brand-text: #0F172A;
 }
 
 @layer base {

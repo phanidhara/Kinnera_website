@@ -70,17 +70,26 @@ const About = () => {
           </h2>
 
           <p className="text-brand-text/70 mb-5 leading-relaxed">
-            Dr. Kinnera Boina stands at the forefront of dermatological care as a board-certified Consultant
-            Dermatologist with over 8 years of specialized experience, building a practice founded on medical
-            excellence, personalized attention, and transformative results.
+            Dr. Kinnera graduated as the Best Outgoing Student of her MBBS batch, earning the prestigious
+            Andhra Pradesh Medical Council Gold Medal and over 10 gold medals for her academic excellence.
+          </p>
+
+          <p className="text-brand-text/70 mb-5 leading-relaxed">
+            She completed her MD in Dermatology at Rangaraya Medical College, where she continued her streak
+            of excellence as a University Topper, receiving the esteemed IADVL Gold Medal from Shri Abdul
+            Nazeer, the Governor of Andhra Pradesh. Throughout her residency, she was a frequent winner of
+            numerous state and national-level quiz competitions.
+          </p>
+
+          <p className="text-brand-text/70 mb-5 leading-relaxed">
+            Driven by a passion for dermatosurgical precision, she pursued a specialized, university-accredited
+            Fellowship in Dermatosurgery and Hair Transplantation at the Cutis Institute of Dermatology in
+            Bangalore — widely recognized as one of India's premier centres for skin surgery.
           </p>
 
           <p className="text-brand-text/70 mb-8 leading-relaxed">
-            Her comprehensive training includes an MBBS and MD in Dermatology, earning more than 10 gold
-            medals — including the prestigious IADVL gold medal for securing the highest marks at university
-            level. She further advanced her expertise with a Fellowship (FRGUHS) in Dermatosurgery and Hair
-            Transplantation, and her mastery of Dermatoscopy gives her an extra edge in diagnosing complex,
-            resistant cases.
+            Dr. Kinnera combines her rigorous academic background with advanced dermatosurgical expertise to
+            provide world-class care in medical dermatology, aesthetic surgery, and hair restoration.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-10">
