@@ -5,11 +5,11 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Playfair Display", ui-serif, Georgia, serif;
   
-  --color-brand-gold: #2563EB;
-  --color-brand-gold-dark: #1E3A8A;
-  --color-brand-gold-light: #DBEAFE;
-  --color-brand-cream: #F0F7FF;
-  --color-brand-text: #0F172A;
+  --color-brand-gold: #6B8FAF;       /* Muted Blue — accents, icons, highlights */
+  --color-brand-gold-dark: #3D6B62;  /* Eucalyptus Green — headings, dark backgrounds */
+  --color-brand-gold-light: #EDE8E1; /* Earthy Greige light — card fills */
+  --color-brand-cream: #F8F5F0;      /* Earthy Greige pale — page background */
+  --color-brand-text: #2C2825;       /* Deep warm charcoal — body text */
 }
 
 @layer base {
