@@ -1,6 +1,15 @@
-import React from 'react';
-import { motion } from 'motion/react';
-import { BookOpen, Users, Microscope, Globe } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { BookOpen, Users, Microscope, Globe, ChevronLeft, ChevronRight } from 'lucide-react';
+
+// Photo gallery — replace src/label when real photos are added
+const photos = [
+  { src: '/dr-kinnera-surgery.png', label: 'Dr. Kinnera performing dermatosurgery', ready: true },
+  { src: '', label: 'Photo 2 — coming soon', ready: false },
+  { src: '', label: 'Photo 3 — coming soon', ready: false },
+  { src: '', label: 'Photo 4 — coming soon', ready: false },
+  { src: '', label: 'Photo 5 — coming soon', ready: false },
+];
 
 const highlights = [
   {
@@ -26,6 +35,15 @@ const highlights = [
 ];
 
 const About = () => {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((c) => (c + 1) % photos.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section id="about" className="section-padding bg-brand-cream">
 
@@ -69,29 +87,69 @@ const About = () => {
         </motion.div>
       </div>
 
-      {/* Full-width surgery image */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="max-w-5xl mx-auto mb-12"
-      >
-        <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[16/7]">
-          <img
-            src="/dr-kinnera-surgery.png"
-            alt="Dr. Kinnera Boina performing dermatosurgery"
-            className="w-full h-full object-cover object-right-top"
-          />
-          {/* Quote overlay */}
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-brand-gold-dark/90 to-transparent p-8">
-            <p className="text-white text-base md:text-lg italic leading-relaxed max-w-2xl">
-              "I believe in addressing not just the visible symptom, but the underlying cause — creating care that lasts."
-            </p>
-            <p className="text-brand-gold-light text-sm font-bold mt-2">— Dr. Kinnera Boina</p>
+      {/* Photo Carousel */}
+      <div className="max-w-5xl mx-auto mb-12">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current}
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -40 }}
+            transition={{ duration: 0.5 }}
+            className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[16/8] bg-brand-gold-light"
+          >
+            {photos[current].ready ? (
+              <img
+                src={photos[current].src}
+                alt={photos[current].label}
+                className="w-full h-full object-cover object-right-top"
+              />
+            ) : (
+              <div className="w-full h-full flex flex-col items-center justify-center text-brand-gold-dark/30">
+                <div className="w-16 h-16 rounded-full border-2 border-dashed border-brand-gold/30 flex items-center justify-center mb-3">
+                  <span className="text-2xl font-bold">{current + 1}</span>
+                </div>
+                <p className="text-sm font-medium">Photo coming soon</p>
+              </div>
+            )}
+
+            {/* Quote overlay only on first slide */}
+            {current === 0 && (
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-brand-gold-dark/85 to-transparent p-6 md:p-8">
+                <p className="text-white text-sm md:text-base italic leading-relaxed max-w-2xl">
+                  "I believe in addressing not just the visible symptom, but the underlying cause — creating care that lasts."
+                </p>
+                <p className="text-brand-gold-light text-xs font-bold mt-1">— Dr. Kinnera Boina</p>
+              </div>
+            )}
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Navigation */}
+        <div className="flex items-center justify-center gap-6 mt-5">
+          <button
+            onClick={() => setCurrent((c) => (c - 1 + photos.length) % photos.length)}
+            className="w-10 h-10 rounded-full border border-brand-gold/30 flex items-center justify-center text-brand-gold-dark hover:bg-brand-gold-dark hover:text-white transition-all"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <div className="flex gap-2">
+            {photos.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                className={`h-2 rounded-full transition-all duration-300 ${i === current ? 'w-8 bg-brand-gold-dark' : 'w-2 bg-brand-gold/30'}`}
+              />
+            ))}
           </div>
+          <button
+            onClick={() => setCurrent((c) => (c + 1) % photos.length)}
+            className="w-10 h-10 rounded-full border border-brand-gold/30 flex items-center justify-center text-brand-gold-dark hover:bg-brand-gold-dark hover:text-white transition-all"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
         </div>
-      </motion.div>
+      </div>
 
       {/* Highlight cards */}
       <div className="max-w-5xl mx-auto">
