@@ -2,14 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { BookOpen, Users, Microscope, Globe, ChevronLeft, ChevronRight } from 'lucide-react';
 
-// Photo gallery — replace src/label when real photos are added
+// 6 photos across 2 slides of 3 — replace src + set ready:true when adding real photos
 const photos = [
   { src: '/dr-kinnera-surgery.png', label: 'Dr. Kinnera performing dermatosurgery', ready: true },
-  { src: '', label: 'Photo 2 — coming soon', ready: false },
-  { src: '', label: 'Photo 3 — coming soon', ready: false },
-  { src: '', label: 'Photo 4 — coming soon', ready: false },
-  { src: '', label: 'Photo 5 — coming soon', ready: false },
+  { src: '', label: 'Photo 2', ready: false },
+  { src: '', label: 'Photo 3', ready: false },
+  { src: '', label: 'Photo 4', ready: false },
+  { src: '', label: 'Photo 5', ready: false },
+  { src: '', label: 'Photo 6', ready: false },
 ];
+const PER_PAGE = 3;
+const slides = [photos.slice(0, PER_PAGE), photos.slice(PER_PAGE)];
 
 const highlights = [
   {
@@ -39,8 +42,8 @@ const About = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrent((c) => (c + 1) % photos.length);
-    }, 4000);
+      setCurrent((c) => (c + 1) % slides.length);
+    }, 5000);
     return () => clearInterval(timer);
   }, []);
 
@@ -87,7 +90,7 @@ const About = () => {
         </motion.div>
       </div>
 
-      {/* Photo Carousel */}
+      {/* Photo Carousel — 3 per slide, 2 slides */}
       <div className="max-w-7xl mx-auto mb-12">
         <AnimatePresence mode="wait">
           <motion.div
@@ -96,45 +99,53 @@ const About = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -40 }}
             transition={{ duration: 0.5 }}
-            className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[16/8] bg-brand-gold-light"
+            className="grid grid-cols-1 md:grid-cols-3 gap-4"
           >
-            {photos[current].ready ? (
-              <img
-                src={photos[current].src}
-                alt={photos[current].label}
-                className="w-full h-full object-cover object-right-top"
-              />
-            ) : (
-              <div className="w-full h-full flex flex-col items-center justify-center text-brand-gold-dark/30">
-                <div className="w-16 h-16 rounded-full border-2 border-dashed border-brand-gold/30 flex items-center justify-center mb-3">
-                  <span className="text-2xl font-bold">{current + 1}</span>
-                </div>
-                <p className="text-sm font-medium">Photo coming soon</p>
+            {slides[current].map((photo, i) => (
+              <div
+                key={i}
+                className="relative rounded-2xl overflow-hidden shadow-md aspect-[4/3] bg-brand-gold/10 border-2 border-dashed border-brand-gold/25"
+              >
+                {photo.ready ? (
+                  <>
+                    <img
+                      src={photo.src}
+                      alt={photo.label}
+                      className="w-full h-full object-cover object-right-top"
+                    />
+                    {/* Quote on first photo of first slide */}
+                    {current === 0 && i === 0 && (
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-brand-gold-dark/85 to-transparent p-4">
+                        <p className="text-white text-xs italic leading-relaxed">
+                          "Addressing not just the visible symptom, but the underlying cause."
+                        </p>
+                        <p className="text-brand-gold-light text-[10px] font-bold mt-1">— Dr. Kinnera Boina</p>
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <div className="w-full h-full flex flex-col items-center justify-center text-brand-gold-dark/30">
+                    <div className="w-12 h-12 rounded-full border-2 border-dashed border-brand-gold/30 flex items-center justify-center mb-2">
+                      <span className="text-lg font-bold">{current * PER_PAGE + i + 1}</span>
+                    </div>
+                    <p className="text-xs font-medium">Photo coming soon</p>
+                  </div>
+                )}
               </div>
-            )}
-
-            {/* Quote overlay only on first slide */}
-            {current === 0 && (
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-brand-gold-dark/85 to-transparent p-6 md:p-8">
-                <p className="text-white text-sm md:text-base italic leading-relaxed max-w-2xl">
-                  "I believe in addressing not just the visible symptom, but the underlying cause — creating care that lasts."
-                </p>
-                <p className="text-brand-gold-light text-xs font-bold mt-1">— Dr. Kinnera Boina</p>
-              </div>
-            )}
+            ))}
           </motion.div>
         </AnimatePresence>
 
         {/* Navigation */}
         <div className="flex items-center justify-center gap-6 mt-5">
           <button
-            onClick={() => setCurrent((c) => (c - 1 + photos.length) % photos.length)}
+            onClick={() => setCurrent((c) => (c - 1 + slides.length) % slides.length)}
             className="w-10 h-10 rounded-full border border-brand-gold/30 flex items-center justify-center text-brand-gold-dark hover:bg-brand-gold-dark hover:text-white transition-all"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
           <div className="flex gap-2">
-            {photos.map((_, i) => (
+            {slides.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setCurrent(i)}
@@ -143,7 +154,7 @@ const About = () => {
             ))}
           </div>
           <button
-            onClick={() => setCurrent((c) => (c + 1) % photos.length)}
+            onClick={() => setCurrent((c) => (c + 1) % slides.length)}
             className="w-10 h-10 rounded-full border border-brand-gold/30 flex items-center justify-center text-brand-gold-dark hover:bg-brand-gold-dark hover:text-white transition-all"
           >
             <ChevronRight className="w-5 h-5" />
