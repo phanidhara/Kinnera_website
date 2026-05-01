@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, Heart, ArrowUp, MessageCircle, Phone, MapPin, Instagram } from 'lucide-react';
+import { Award, Heart, ArrowUp, MessageCircle, Phone, MapPin, Instagram, Youtube } from 'lucide-react';
 
 const WHATSAPP = 'https://wa.me/917981337366?text=Hi%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Kinnera';
 
@@ -114,6 +114,15 @@ const Footer = () => {
               aria-label="Instagram"
             >
               <Instagram className="w-4 h-4" />
+            </a>
+            <a
+              href="https://www.youtube.com/@theandhra_dermatologist"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-red-400 transition-colors"
+              aria-label="YouTube"
+            >
+              <Youtube className="w-4 h-4" />
             </a>
           </div>
           <button

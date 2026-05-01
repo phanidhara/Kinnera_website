@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { MapPin, Phone, Clock, MessageCircle, Instagram, Facebook } from 'lucide-react';
+import { MapPin, Phone, Clock, MessageCircle, Instagram, Facebook, Youtube } from 'lucide-react';
 
 const WHATSAPP = 'https://wa.me/917981337366?text=Hi%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Kinnera';
 
@@ -101,6 +101,9 @@ const Contact = () => {
               </a>
               <a href="#" className="w-11 h-11 bg-brand-cream rounded-full flex items-center justify-center text-brand-gold-dark border border-brand-gold/15 hover:bg-brand-gold-dark hover:text-white transition-all">
                 <Facebook className="w-5 h-5" />
+              </a>
+              <a href="https://www.youtube.com/@theandhra_dermatologist" target="_blank" rel="noopener noreferrer" className="w-11 h-11 bg-brand-cream rounded-full flex items-center justify-center text-brand-gold-dark border border-brand-gold/15 hover:bg-red-600 hover:text-white hover:border-red-600 transition-all">
+                <Youtube className="w-5 h-5" />
               </a>
             </div>
           </motion.div>
