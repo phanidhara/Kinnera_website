@@ -47,7 +47,7 @@ const About = () => {
   return (
     <section id="about" className="section-padding bg-brand-cream">
 
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-7xl mx-auto">
 
         {/* Header */}
         <motion.div
@@ -88,7 +88,7 @@ const About = () => {
       </div>
 
       {/* Photo Carousel */}
-      <div className="max-w-5xl mx-auto mb-12">
+      <div className="max-w-7xl mx-auto mb-12">
         <AnimatePresence mode="wait">
           <motion.div
             key={current}
@@ -153,7 +153,7 @@ const About = () => {
 
       {/* Highlight cards */}
       <div className="max-w-5xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
           {highlights.map((h, i) => (
             <motion.div
               key={h.title}
@@ -178,7 +178,7 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="border-l-4 border-brand-gold pl-6"
+          className="max-w-7xl mx-auto border-l-4 border-brand-gold pl-6"
         >
           <h4 className="font-bold text-brand-gold-dark mb-3">Professional Activities</h4>
           <ul className="space-y-2 text-sm text-brand-text/70">
