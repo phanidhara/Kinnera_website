@@ -19,7 +19,7 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-brand-gold-dark leading-[1.1] mb-4">
-            Dr. Kinnera <span className="text-brand-gold italic">B.</span>
+            Dr. Kinnera <span className="text-brand-gold-dark italic">B.</span>
           </h1>
 
           <p className="text-lg md:text-xl text-brand-text/70 font-medium mb-8">

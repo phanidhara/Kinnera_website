@@ -38,7 +38,7 @@ const Header = () => {
           </div>
           <div>
             <h1 className="text-lg md:text-xl font-serif font-bold tracking-tight text-brand-gold-dark leading-none">
-              Dr. <span className="text-brand-gold">Kinnera Boina</span>
+              Dr. <span className="text-brand-gold-dark">Kinnera Boina</span>
             </h1>
             <p className="text-[10px] uppercase tracking-widest font-semibold text-brand-gold-dark/50 mt-0.5">
               MBBS, MD, FRGUHS
