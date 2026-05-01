@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, Heart, ArrowUp, MessageCircle, Phone, MapPin } from 'lucide-react';
+import { Award, Heart, ArrowUp, MessageCircle, Phone, MapPin, Instagram } from 'lucide-react';
 
 const WHATSAPP = 'https://wa.me/917981337366?text=Hi%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Kinnera';
 
@@ -104,8 +104,17 @@ const Footer = () => {
           <p className="text-brand-gold-light/30 text-xs">
             © 2026 Dr. Kinnera Boina. All rights reserved.
           </p>
-          <div className="flex items-center gap-1.5 text-brand-gold-light/30 text-xs">
-            Made with <Heart className="w-3.5 h-3.5 text-red-400 fill-red-400" /> in Visakhapatnam
+          <div className="flex items-center gap-4 text-brand-gold-light/30 text-xs">
+            <span className="flex items-center gap-1.5">Made with <Heart className="w-3.5 h-3.5 text-red-400 fill-red-400" /> in Visakhapatnam</span>
+            <a
+              href="https://www.instagram.com/theandhra_dermatologist?igsh=MXhvOHN6bHp0Y2po"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-4 h-4" />
+            </a>
           </div>
           <button
             onClick={scrollToTop}

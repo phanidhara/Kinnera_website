@@ -96,7 +96,7 @@ const Contact = () => {
 
             {/* Social */}
             <div className="flex gap-3">
-              <a href="#" className="w-11 h-11 bg-brand-cream rounded-full flex items-center justify-center text-brand-gold-dark border border-brand-gold/15 hover:bg-brand-gold-dark hover:text-white transition-all">
+              <a href="https://www.instagram.com/theandhra_dermatologist?igsh=MXhvOHN6bHp0Y2po" target="_blank" rel="noopener noreferrer" className="w-11 h-11 bg-brand-cream rounded-full flex items-center justify-center text-brand-gold-dark border border-brand-gold/15 hover:bg-brand-gold-dark hover:text-white transition-all">
                 <Instagram className="w-5 h-5" />
               </a>
               <a href="#" className="w-11 h-11 bg-brand-cream rounded-full flex items-center justify-center text-brand-gold-dark border border-brand-gold/15 hover:bg-brand-gold-dark hover:text-white transition-all">
