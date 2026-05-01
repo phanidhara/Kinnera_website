@@ -39,11 +39,11 @@ const About = () => {
           transition={{ duration: 0.8 }}
           className="relative"
         >
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white aspect-[4/5] max-w-md mx-auto lg:mx-0">
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white aspect-[4/3] max-w-md mx-auto lg:mx-0">
             <img
-              src="/dr-kinnera.png"
-              alt="Dr. Kinnera Boina — Consultant Dermatologist at Apollo Hospitals Visakhapatnam"
-              className="w-full h-full object-cover object-top"
+              src="/dr-kinnera-surgery.png"
+              alt="Dr. Kinnera Boina performing dermatosurgery"
+              className="w-full h-full object-cover object-center"
             />
           </div>
           {/* Pull quote overlay */}
