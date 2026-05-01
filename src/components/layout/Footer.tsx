@@ -26,12 +26,12 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-brand-gold-light/60 text-sm leading-relaxed mb-6">
-              Chief Dermatologist at Apollo Hospitals, Ramnagar. Providing gold-standard dermatological care in Visakhapatnam.
+              Consultant Dermatologist at Apollo Hospitals &amp; Sujata Hospital. Providing gold-standard dermatological care in Visakhapatnam.
             </p>
             <div className="space-y-2 text-sm text-brand-gold-light/50">
-              <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 shrink-0" />
-                Apollo Hospitals, Ramnagar, Vizag
+              <div className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 shrink-0 mt-0.5" />
+                <span>Apollo Hospitals, Ramnagar, Vizag<br />Sujata Hospital, Gajuwaka, Vizag</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 shrink-0" />

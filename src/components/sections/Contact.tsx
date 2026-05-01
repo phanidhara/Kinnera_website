@@ -74,9 +74,16 @@ const Contact = () => {
                 <div className="bg-brand-gold-light p-3 rounded-xl shrink-0">
                   <MapPin className="w-5 h-5 text-brand-gold-dark" />
                 </div>
-                <div>
-                  <h4 className="font-bold text-brand-gold-dark mb-1">Location</h4>
-                  <p className="text-brand-text/60 text-sm">Apollo Hospitals, Ramnagar, Visakhapatnam, Andhra Pradesh</p>
+                <div className="space-y-3">
+                  <h4 className="font-bold text-brand-gold-dark">Consultation Locations</h4>
+                  <div>
+                    <p className="text-brand-gold-dark font-semibold text-sm">Apollo Hospitals</p>
+                    <p className="text-brand-text/60 text-sm">Ramnagar, Visakhapatnam, Andhra Pradesh</p>
+                  </div>
+                  <div>
+                    <p className="text-brand-gold-dark font-semibold text-sm">Sujata Hospital</p>
+                    <p className="text-brand-text/60 text-sm">6-60-8/9, Opp. SBT Hotel, Sramika Nagar,<br />Chaitanya Nagar, Gajuwaka, Andhra Pradesh 530026</p>
+                  </div>
                 </div>
               </div>
 
@@ -142,20 +149,41 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Map placeholder */}
-            <div className="rounded-3xl overflow-hidden border border-brand-gold/10 h-64 bg-brand-cream flex items-center justify-center">
-              <div className="text-center text-brand-text/40">
-                <MapPin className="w-10 h-10 mx-auto mb-2 text-brand-gold/50" />
-                <p className="text-sm font-medium">Apollo Hospitals, Ramnagar</p>
-                <p className="text-xs">Visakhapatnam, Andhra Pradesh</p>
-                <a
-                  href="https://maps.google.com/?q=Apollo+Hospitals+Ramnagar+Visakhapatnam"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-block text-xs text-brand-gold-dark font-bold underline underline-offset-2"
-                >
-                  Open in Google Maps →
-                </a>
+            {/* Location cards */}
+            <div className="rounded-3xl border border-brand-gold/10 bg-brand-cream overflow-hidden divide-y divide-brand-gold/10">
+              <div className="flex items-start gap-4 p-6">
+                <div className="bg-brand-gold-light p-2.5 rounded-xl shrink-0 mt-0.5">
+                  <MapPin className="w-4 h-4 text-brand-gold-dark" />
+                </div>
+                <div>
+                  <p className="font-bold text-brand-gold-dark text-sm mb-0.5">Apollo Hospitals</p>
+                  <p className="text-brand-text/60 text-xs leading-relaxed">Ramnagar, Visakhapatnam, Andhra Pradesh</p>
+                  <a
+                    href="https://maps.google.com/?q=Apollo+Hospitals+Ramnagar+Visakhapatnam"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-block text-xs text-brand-gold-dark font-bold underline underline-offset-2"
+                  >
+                    Open in Google Maps →
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start gap-4 p-6">
+                <div className="bg-brand-gold-light p-2.5 rounded-xl shrink-0 mt-0.5">
+                  <MapPin className="w-4 h-4 text-brand-gold-dark" />
+                </div>
+                <div>
+                  <p className="font-bold text-brand-gold-dark text-sm mb-0.5">Sujata Hospital</p>
+                  <p className="text-brand-text/60 text-xs leading-relaxed">6-60-8/9, Opp. SBT Hotel, Sramika Nagar,<br />Chaitanya Nagar, Gajuwaka, AP 530026</p>
+                  <a
+                    href="https://maps.google.com/?q=Sujata+Hospital+Gajuwaka+Visakhapatnam"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-block text-xs text-brand-gold-dark font-bold underline underline-offset-2"
+                  >
+                    Open in Google Maps →
+                  </a>
+                </div>
               </div>
             </div>
           </motion.div>
