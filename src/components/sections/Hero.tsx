@@ -1,5 +1,8 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { Phone, MessageCircle, MapPin } from 'lucide-react';
+
+const WHATSAPP = 'https://wa.me/917981337366?text=Hi%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Kinnera';
 
 const Hero = () => {
   return (
@@ -26,11 +29,46 @@ const Hero = () => {
             MBBS, MD (Dermatology), FRGUHS (Dermatosurgery &amp; Hair Transplantation)
           </p>
 
-          <p className="text-lg text-brand-text/70 mb-10 leading-relaxed max-w-xl">
+          <p className="text-lg text-brand-text/70 mb-8 leading-relaxed max-w-xl">
             With over 8 years of specialized experience and more than 10 gold medals to her credit,
             Dr. Kinnera delivers transformative dermatological care — from medical skin conditions
             to advanced dermatosurgical and aesthetic procedures.
           </p>
+
+          {/* Trust pills */}
+          <div className="flex flex-wrap gap-2 mb-8">
+            {['✦ IADVL Gold Medalist', '10+ Awards', '8+ Years Experience', 'Fellowship in Dermatosurgery'].map((pill) => (
+              <span key={pill} className="text-xs font-semibold text-brand-gold-dark bg-brand-gold-dark/8 border border-brand-gold-dark/15 px-3 py-1.5 rounded-full">
+                {pill}
+              </span>
+            ))}
+          </div>
+
+          {/* CTAs */}
+          <div className="flex flex-wrap gap-4 mb-7">
+            <a
+              href="tel:+917981337366"
+              className="flex items-center gap-2 bg-brand-gold-dark text-white px-7 py-3.5 rounded-full font-bold text-sm hover:bg-brand-gold hover:shadow-lg transition-all active:scale-95"
+            >
+              <Phone className="w-4 h-4" />
+              Call Now
+            </a>
+            <a
+              href={WHATSAPP}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-[#25D366] text-white px-7 py-3.5 rounded-full font-bold text-sm hover:bg-[#1ebe5d] hover:shadow-lg transition-all active:scale-95"
+            >
+              <MessageCircle className="w-4 h-4" />
+              WhatsApp Us
+            </a>
+          </div>
+
+          {/* Available at */}
+          <div className="flex items-start gap-2 text-brand-text/40 text-xs">
+            <MapPin className="w-3.5 h-3.5 shrink-0 mt-0.5" />
+            <span>Available at <span className="font-semibold text-brand-text/60">Apollo Hospitals, Ramnagar</span> &amp; <span className="font-semibold text-brand-text/60">Sujata Hospital, Gajuwaka</span> — Visakhapatnam</span>
+          </div>
         </motion.div>
 
         {/* Right — Photo */}
