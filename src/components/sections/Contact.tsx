@@ -79,10 +79,16 @@ const Contact = () => {
                   <div>
                     <p className="text-brand-gold-dark font-semibold text-sm">Apollo Hospitals</p>
                     <p className="text-brand-text/60 text-sm">Ramnagar, Visakhapatnam, Andhra Pradesh</p>
+                    <a href="https://maps.google.com/?q=Apollo+Hospitals+Ramnagar+Visakhapatnam" target="_blank" rel="noopener noreferrer" className="text-xs text-brand-gold-dark font-bold underline underline-offset-2 hover:text-brand-gold transition-colors">
+                      Open in Google Maps →
+                    </a>
                   </div>
                   <div>
                     <p className="text-brand-gold-dark font-semibold text-sm">Sujata Hospital</p>
                     <p className="text-brand-text/60 text-sm">6-60-8/9, Opp. SBT Hotel, Sramika Nagar,<br />Chaitanya Nagar, Gajuwaka, Andhra Pradesh 530026</p>
+                    <a href="https://maps.google.com/?q=Sujata+Hospital+Gajuwaka+Visakhapatnam" target="_blank" rel="noopener noreferrer" className="text-xs text-brand-gold-dark font-bold underline underline-offset-2 hover:text-brand-gold transition-colors">
+                      Open in Google Maps →
+                    </a>
                   </div>
                 </div>
               </div>
@@ -149,43 +155,6 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Location cards */}
-            <div className="rounded-3xl border border-brand-gold/10 bg-brand-cream overflow-hidden divide-y divide-brand-gold/10">
-              <div className="flex items-start gap-4 p-6">
-                <div className="bg-brand-gold-light p-2.5 rounded-xl shrink-0 mt-0.5">
-                  <MapPin className="w-4 h-4 text-brand-gold-dark" />
-                </div>
-                <div>
-                  <p className="font-bold text-brand-gold-dark text-sm mb-0.5">Apollo Hospitals</p>
-                  <p className="text-brand-text/60 text-xs leading-relaxed">Ramnagar, Visakhapatnam, Andhra Pradesh</p>
-                  <a
-                    href="https://maps.google.com/?q=Apollo+Hospitals+Ramnagar+Visakhapatnam"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-2 inline-block text-xs text-brand-gold-dark font-bold underline underline-offset-2"
-                  >
-                    Open in Google Maps →
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-start gap-4 p-6">
-                <div className="bg-brand-gold-light p-2.5 rounded-xl shrink-0 mt-0.5">
-                  <MapPin className="w-4 h-4 text-brand-gold-dark" />
-                </div>
-                <div>
-                  <p className="font-bold text-brand-gold-dark text-sm mb-0.5">Sujata Hospital</p>
-                  <p className="text-brand-text/60 text-xs leading-relaxed">6-60-8/9, Opp. SBT Hotel, Sramika Nagar,<br />Chaitanya Nagar, Gajuwaka, AP 530026</p>
-                  <a
-                    href="https://maps.google.com/?q=Sujata+Hospital+Gajuwaka+Visakhapatnam"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-2 inline-block text-xs text-brand-gold-dark font-bold underline underline-offset-2"
-                  >
-                    Open in Google Maps →
-                  </a>
-                </div>
-              </div>
-            </div>
           </motion.div>
         </div>
       </div>

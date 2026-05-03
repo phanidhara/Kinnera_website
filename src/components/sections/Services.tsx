@@ -3,13 +3,15 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Stethoscope, Sparkles, Scissors, Baby, Glasses, ChevronDown, MessageCircle } from 'lucide-react';
 
 const HairFollicleIcon = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
-    {/* Follicle bulb */}
-    <ellipse cx="12" cy="18" rx="4" ry="3" />
-    {/* Hair strand curving up */}
-    <path d="M12 15 C12 10, 9 7, 11 3" />
-    {/* Second strand */}
-    <path d="M13 14 C14 9, 16 7, 14 3" />
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+    {/* Hair shaft — straight line at top */}
+    <line x1="12" y1="2" x2="12" y2="8" />
+    {/* Follicle walls narrowing into bulb */}
+    <path d="M9.5 8 C9 10 8.5 12 8.5 15 C8.5 18.5 10 22 12 22 C14 22 15.5 18.5 15.5 15 C15.5 12 15 10 14.5 8 Z" />
+    {/* Top of follicle (opening) */}
+    <line x1="9.5" y1="8" x2="14.5" y2="8" />
+    {/* Dermal papilla — filled dot inside bulb */}
+    <circle cx="12" cy="17.5" r="1.8" fill="currentColor" stroke="none" />
   </svg>
 );
 
