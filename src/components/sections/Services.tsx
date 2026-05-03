@@ -1,6 +1,17 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Stethoscope, Sparkles, Scissors, Baby, Sprout, Glasses, ChevronDown, MessageCircle } from 'lucide-react';
+import { Stethoscope, Sparkles, Scissors, Baby, Glasses, ChevronDown, MessageCircle } from 'lucide-react';
+
+const HairFollicleIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+    {/* Follicle bulb */}
+    <ellipse cx="12" cy="18" rx="4" ry="3" />
+    {/* Hair strand curving up */}
+    <path d="M12 15 C12 10, 9 7, 11 3" />
+    {/* Second strand */}
+    <path d="M13 14 C14 9, 16 7, 14 3" />
+  </svg>
+);
 
 const WHATSAPP = 'https://wa.me/917981337366?text=Hi%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Kinnera';
 
@@ -24,7 +35,7 @@ const categories = [
   },
   {
     id: 'trichology',
-    icon: Sprout,
+    icon: HairFollicleIcon,
     title: 'Trichology & Hair Transplantation',
     description: 'Comprehensive hair and scalp solutions — from diagnosis and medical management to advanced FUE hair transplantation.',
     procedures: [
