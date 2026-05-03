@@ -61,7 +61,7 @@ const About = () => {
         >
           <span className="text-brand-gold font-bold tracking-widest uppercase text-sm mb-4 block">About Dr. Kinnera</span>
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-brand-gold-dark mb-8 leading-tight">
-            Where Gold Medal <span className="italic text-brand-gold">Academics Meet</span> Surgical Artistry
+            Where Academic <span className="italic text-brand-gold">Excellence Meets</span> Procedural Perfection
           </h2>
 
           <p className="text-brand-text/70 mb-5 leading-relaxed text-lg">
@@ -78,13 +78,21 @@ const About = () => {
 
           <p className="text-brand-text/70 mb-5 leading-relaxed text-lg">
             Driven by a passion for dermatosurgical precision, she pursued a specialized, university-accredited
-            Fellowship in Dermatosurgery and Hair Transplantation at the Cutis Institute of Dermatology in
+            Fellowship in Dermatosurgery and Hair Transplantation at the Cutis Academy of Cutaneous Sciences in
             Bangalore — widely recognized as one of India's premier centres for skin surgery.
           </p>
 
-          <p className="text-brand-text/70 leading-relaxed text-lg">
+          <p className="text-brand-text/70 mb-5 leading-relaxed text-lg">
             Dr. Kinnera combines her rigorous academic background with advanced dermatosurgical expertise to
             provide world-class care in medical dermatology, aesthetic surgery, and hair restoration.
+          </p>
+
+          <p className="text-brand-text/70 leading-relaxed text-lg">
+            Invited as a speaker at prestigious national and international conferences, she is an active member
+            of leading dermatological societies and a committed contributor to the academic community. With a
+            strong passion for teaching, she mentors the next generation of dermatologists while consistently
+            presenting advancements in clinical and procedural dermatology. Her work reflects a blend of
+            scientific rigor, innovation, and dedication to excellence in patient care.
           </p>
         </motion.div>
       </div>
@@ -182,22 +190,6 @@ const About = () => {
           ))}
         </div>
 
-        {/* Professional activities */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-7xl mx-auto border-l-4 border-brand-gold pl-6"
-        >
-          <h4 className="font-bold text-brand-gold-dark mb-3">Professional Activities</h4>
-          <ul className="space-y-2 text-sm text-brand-text/70">
-            <li>· Invited speaker at prestigious national &amp; international conferences</li>
-            <li>· Active member of leading dermatological societies</li>
-            <li>· Mentor to the next generation of dermatologists</li>
-            <li>· Presentations on clinical &amp; procedural dermatology innovations</li>
-          </ul>
-        </motion.div>
       </div>
 
     </section>
