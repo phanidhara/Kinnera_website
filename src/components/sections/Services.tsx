@@ -3,16 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Stethoscope, Sparkles, Scissors, Baby, Glasses, ChevronDown, MessageCircle } from 'lucide-react';
 
 const HairFollicleIcon = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
-    {/* Hair shaft — straight line at top */}
-    <line x1="12" y1="2" x2="12" y2="8" />
-    {/* Follicle walls narrowing into bulb */}
-    <path d="M9.5 8 C9 10 8.5 12 8.5 15 C8.5 18.5 10 22 12 22 C14 22 15.5 18.5 15.5 15 C15.5 12 15 10 14.5 8 Z" />
-    {/* Top of follicle (opening) */}
-    <line x1="9.5" y1="8" x2="14.5" y2="8" />
-    {/* Dermal papilla — filled dot inside bulb */}
-    <circle cx="12" cy="17.5" r="1.8" fill="currentColor" stroke="none" />
-  </svg>
+  <img src="/hair-folicle.png" alt="Hair follicle" className={className} style={{ objectFit: 'contain' }} />
 );
 
 const WHATSAPP = 'https://wa.me/917981337366?text=Hi%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Kinnera';

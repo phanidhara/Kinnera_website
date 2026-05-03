@@ -84,9 +84,9 @@ const Contact = () => {
                     </a>
                   </div>
                   <div>
-                    <p className="text-brand-gold-dark font-semibold text-sm">Sujata Hospital</p>
+                    <p className="text-brand-gold-dark font-semibold text-sm">Sujatha Hospital</p>
                     <p className="text-brand-text/60 text-sm">6-60-8/9, Opp. SBT Hotel, Sramika Nagar,<br />Chaitanya Nagar, Gajuwaka, Andhra Pradesh 530026</p>
-                    <a href="https://maps.google.com/?q=Sujata+Hospital+Gajuwaka+Visakhapatnam" target="_blank" rel="noopener noreferrer" className="text-xs text-brand-gold-dark font-bold underline underline-offset-2 hover:text-brand-gold transition-colors">
+                    <a href="https://maps.google.com/?q=Sujatha+Hospital+Gajuwaka+Visakhapatnam" target="_blank" rel="noopener noreferrer" className="text-xs text-brand-gold-dark font-bold underline underline-offset-2 hover:text-brand-gold transition-colors">
                       Open in Google Maps →
                     </a>
                   </div>
