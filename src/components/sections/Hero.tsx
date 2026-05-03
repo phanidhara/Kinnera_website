@@ -19,18 +19,33 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-brand-gold-dark leading-[1.1] mb-4">
-            Dr. Kinnera <span className="text-brand-gold-dark italic">B.</span>
+            Dr. Kinnera B.
           </h1>
 
           <p className="text-lg md:text-xl text-brand-text/70 font-medium mb-8">
             MBBS, MD (Dermatology), FRGUHS (Dermatosurgery &amp; Hair Transplantation)
           </p>
 
-          <p className="text-lg text-brand-text/70 leading-relaxed max-w-xl">
+          <p className="text-lg text-brand-text/70 leading-relaxed max-w-xl mb-8">
             With over 8 years of specialized experience and more than 10 gold medals to her credit,
             Dr. Kinnera delivers transformative dermatological care — from medical skin conditions
             to advanced dermatosurgical and aesthetic procedures.
           </p>
+
+          {/* Specialty pills */}
+          <div className="flex flex-wrap gap-2">
+            {[
+              'Vitiligo Management',
+              'Hair Transplantation',
+              'Keloid Management',
+              'Scar Revision Techniques',
+              'Mole Excision Surgery',
+            ].map((item) => (
+              <span key={item} className="text-xs font-semibold text-brand-gold-dark bg-brand-gold-dark/8 border border-brand-gold-dark/15 px-3 py-1.5 rounded-full">
+                {item}
+              </span>
+            ))}
+          </div>
         </motion.div>
 
         {/* Right — Photo */}
