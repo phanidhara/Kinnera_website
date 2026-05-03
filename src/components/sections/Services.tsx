@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Stethoscope, Sparkles, Scissors, Baby, Heart, ChevronDown, MessageCircle } from 'lucide-react';
+import { Stethoscope, Sparkles, Scissors, Baby, Sprout, Glasses, ChevronDown, MessageCircle } from 'lucide-react';
 
 const WHATSAPP = 'https://wa.me/917981337366?text=Hi%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20Dr.%20Kinnera';
 
@@ -24,7 +24,7 @@ const categories = [
   },
   {
     id: 'trichology',
-    icon: Heart,
+    icon: Sprout,
     title: 'Trichology & Hair Transplantation',
     description: 'Comprehensive hair and scalp solutions — from diagnosis and medical management to advanced FUE hair transplantation.',
     procedures: [
@@ -79,7 +79,7 @@ const categories = [
       'Vampire Lift Facial',
       'Dermaplaning',
     ],
-    color: 'bg-yellow-50 border-yellow-200',
+    color: 'bg-white border-gray-100',
     iconColor: 'bg-yellow-100 text-yellow-800',
     tag: 'Popular',
   },
@@ -100,7 +100,7 @@ const categories = [
   },
   {
     id: 'geriatric',
-    icon: Stethoscope,
+    icon: Glasses,
     title: 'Geriatric Dermatology',
     description: 'Specialized care for age-related and systemic skin conditions in older patients.',
     procedures: [
