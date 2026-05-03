@@ -2,14 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { BookOpen, Users, Microscope, Globe, ChevronLeft, ChevronRight } from 'lucide-react';
 
-// 6 photos across 2 slides of 3 — replace src + set ready:true when adding real photos
 const photos = [
-  { src: '/dr-kinnera-surgery.png', label: 'Dr. Kinnera performing dermatosurgery', ready: true },
-  { src: '', label: 'Photo 2', ready: false },
-  { src: '', label: 'Photo 3', ready: false },
-  { src: '', label: 'Photo 4', ready: false },
-  { src: '', label: 'Photo 5', ready: false },
-  { src: '', label: 'Photo 6', ready: false },
+  { src: '/photo-1.png', label: 'Dr. Kinnera receiving Gold Medal — YSR University of Health Sciences', ready: true, pos: 'object-bottom' },
+  { src: '/photo-2.png', label: 'Dr. Kinnera speaking at ACDICON National Conference', ready: true, pos: 'object-top' },
+  { src: '/photo-3.png', label: 'Dr. Kinnera presenting at ACDICON conference', ready: true, pos: 'object-center' },
+  { src: '/photo-4.png', label: 'Dr. Kinnera with surgical team in the operation theatre', ready: true, pos: 'object-center' },
+  { src: '/photo-5.png', label: 'Dr. Kinnera receiving academic award at convocation', ready: true, pos: 'object-top' },
+  { src: '/photo-6.png', label: 'Dr. Kinnera performing dermatosurgery', ready: true, pos: 'object-center' },
 ];
 const PER_PAGE = 3;
 const slides = [photos.slice(0, PER_PAGE), photos.slice(PER_PAGE)];
@@ -111,7 +110,7 @@ const About = () => {
                     <img
                       src={photo.src}
                       alt={photo.label}
-                      className="w-full h-full object-cover object-right-top"
+                      className={`w-full h-full object-cover ${photo.pos}`}
                     />
                     {/* Quote on first photo of first slide */}
                     {current === 0 && i === 0 && (
