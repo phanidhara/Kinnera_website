@@ -45,7 +45,7 @@ const Contact = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-stretch">
           {/* Left — Contact info */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -127,10 +127,10 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="space-y-6"
+            className="h-full"
           >
             {/* WhatsApp card */}
-            <div className="bg-brand-gold-dark rounded-3xl p-10 text-center relative overflow-hidden">
+            <div className="bg-brand-gold-dark rounded-3xl p-10 text-center relative overflow-hidden h-full flex flex-col justify-center">
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-brand-gold/15 rounded-full blur-2xl pointer-events-none" />
               <div className="relative z-10">
                 <div className="w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center mx-auto mb-5">

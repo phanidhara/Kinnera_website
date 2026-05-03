@@ -93,7 +93,6 @@ const Footer = () => {
               <MessageCircle className="w-4 h-4" />
               WhatsApp Us
             </a>
-            <p className="text-brand-gold-light/30 text-xs mt-3">Mon–Sat, 10 AM – 7 PM</p>
           </div>
         </div>
 
