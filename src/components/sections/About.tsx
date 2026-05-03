@@ -9,9 +9,14 @@ const photos = [
   { src: '/photo-4.png', label: 'Dr. Kinnera with surgical team in the operation theatre', ready: true, pos: 'object-center' },
   { src: '/photo-5.png', label: 'Dr. Kinnera receiving academic award at convocation', ready: true, pos: 'object-top' },
   { src: '/photo-6.png', label: 'Dr. Kinnera performing dermatosurgery', ready: true, pos: 'object-center' },
+  { src: '/photo-7.png', label: 'Dr. Kinnera at a dermatology event', ready: true, pos: 'object-center' },
+  { src: '/photo-8.png', label: 'Dr. Kinnera at a dermatology event', ready: true, pos: 'object-center' },
+  { src: '/photo-9.png', label: 'Dr. Kinnera at a dermatology event', ready: true, pos: 'object-center' },
 ];
 const PER_PAGE = 3;
-const slides = [photos.slice(0, PER_PAGE), photos.slice(PER_PAGE)];
+const slides = Array.from({ length: Math.ceil(photos.length / PER_PAGE) }, (_, i) =>
+  photos.slice(i * PER_PAGE, (i + 1) * PER_PAGE)
+);
 
 const highlights = [
   {
